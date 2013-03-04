@@ -1,0 +1,22 @@
+{
+    "name": "badcow/lorem-ipsum",
+    "description": "Lorem ipsum generator.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mathew Tinsley",
+            "email": "tinsley@tinsology.net"
+        },
+        {
+            "name": "Sam Williams",
+            "email": "sam@badcow.co"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": { "Badcow": "lib/" }
+    }
+}
