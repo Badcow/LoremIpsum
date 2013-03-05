@@ -102,7 +102,7 @@ class Generator
             return;
         }
 
-        $this->words[] = $word;
+        $this->words[] = $words;
     }
 
     /**
@@ -184,7 +184,7 @@ class Generator
      * @return array
      */
     public function getRandomWords($count)
-	{
+    {
         $words = array();
 
         for ($i = 0; $i < $count; $i++) {
@@ -197,8 +197,8 @@ class Generator
             $words[] = $word;
         }
 
-		return $words;
-	}
+        return $words;
+    }
 
     /**
      * Get an array of sentences
@@ -246,41 +246,41 @@ class Generator
      * @return string
      */
     protected function toSentence(array $sentence)
-	{
-		$count = count($sentence);
-		$sentence[$count - 1] = $sentence[$count - 1] . '.';
+    {
+        $count = count($sentence);
+        $sentence[$count - 1] = $sentence[$count - 1] . '.';
         $sentence[0] = ucfirst($sentence[0]);
 
-		if ($count < 4) {
-			return implode(' ', $sentence);
+        if ($count < 4) {
+            return implode(' ', $sentence);
         }
 
-		$commas = $this->numberOfCommas($count);
+        $commas = $this->numberOfCommas($count);
 
-		for ($i = 1; $i <= $commas; $i++) {
-			$index = (int) round($i * $count / ($commas + 1));
+        for ($i = 1; $i <= $commas; $i++) {
+            $index = (int) round($i * $count / ($commas + 1));
 
-			if ($index < ($count - 1) && $index > 0) {
-				$sentence[$index] = $sentence[$index] . ',';
-			}
-		}
+            if ($index < ($count - 1) && $index > 0) {
+                $sentence[$index] = $sentence[$index] . ',';
+            }
+        }
 
         return implode(' ', $sentence);
-	}
+    }
 
     /**
-	 * Determines the number of commas for a
-	 * sentence of the given length. Average and
-	 * standard deviation are determined superficially
-	 *
+     * Determines the number of commas for a
+     * sentence of the given length. Average and
+     * standard deviation are determined superficially
+     *
      * @param int $len
      * @return int
      */
     public function numberOfCommas($len)
-	{
-		$avg = (float) log($len, 6);
-		$stdDev = (float) $avg / 6.000;
+    {
+        $avg = (float) log($len, 6);
+        $stdDev = (float) $avg / 6.000;
 
-		return (int) round(Statistics::gauss_ms($avg, $stdDev));
-	}
+        return (int) round(Statistics::gauss_ms($avg, $stdDev));
+    }
 }
