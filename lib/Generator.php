@@ -8,7 +8,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Badcow\LoremIpsum;
 
 class Generator
@@ -78,19 +77,17 @@ class Generator
     );
 
     /**
+     * Set an array of words. Removes existing words.
+     *
      * @param $words
-     * @return Generator
      */
     public function setWords(array $words)
     {
         $this->words = $words;
-
-        return $this;
     }
 
     /**
-     * Add a single or multiple words to the
-     * generator
+     * Add a single or array of multiple words to the generator.
      *
      * @param string|array $words
      */
@@ -118,7 +115,7 @@ class Generator
      */
     public function setParagraphMean($paragraphMean)
     {
-        $this->paragraphMean = $paragraphMean;
+        $this->paragraphMean = (float) $paragraphMean;
     }
 
     /**
@@ -134,7 +131,7 @@ class Generator
      */
     public function setParagraphStDev($paragraphStDev)
     {
-        $this->paragraphStDev = $paragraphStDev;
+        $this->paragraphStDev = (float) $paragraphStDev;
     }
 
     /**
@@ -150,7 +147,7 @@ class Generator
      */
     public function setSentenceMean($sentenceMean)
     {
-        $this->sentenceMean = $sentenceMean;
+        $this->sentenceMean = (float) $sentenceMean;
     }
 
     /**
@@ -166,7 +163,7 @@ class Generator
      */
     public function setSentenceStDev($sentenceStDev)
     {
-        $this->sentenceStDev = $sentenceStDev;
+        $this->sentenceStDev = (float) $sentenceStDev;
     }
 
     /**

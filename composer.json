@@ -14,9 +14,12 @@
     ],
     "minimum-stability": "dev",
     "require": {
-
+        "php": ">=5.3.9"
+    },
+    "suggest": {
+        "twig/twig": "Twig is a template language for PHP, released under the new BSD license (code and documentation)."
     },
     "autoload": {
-        "psr-0": { "Badcow": "lib/" }
+        "psr-4": { "Badcow\\LoremIpsum\\": "lib/" }
     }
 }

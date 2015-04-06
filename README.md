@@ -1,7 +1,7 @@
 Lorem Ipsum Generator
 =====================
 
-Library for generating lorem ipsum text. More to come very soon!
+Library for generating lorem ipsum text. Bonus Twig extension! This has been changed around a bit from the original [geecu/LoremIpsum](https://github.com/geecu/LoremIpsum).
 
 ## Basic Usage
 

@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Badcow\LoremIpsum\Extensions;
+namespace Badcow\LoremIpsum\Twig;
 
-class TwigExtension extends \Twig_Extension
+class Extension extends \Twig_Extension
 {
     /**
      * {@inheritdoc}
