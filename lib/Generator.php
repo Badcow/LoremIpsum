@@ -79,6 +79,8 @@ class Generator
     /**
      * Set an array of words. Removes existing words.
      *
+     * @codeCoverageIgnore
+     *
      * @param $words
      */
     public function setWords(array $words)
@@ -88,6 +90,8 @@ class Generator
 
     /**
      * Add a single or array of multiple words to the generator.
+     *
+     * @codeCoverageIgnore
      *
      * @param string|array $words
      */
@@ -103,6 +107,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @return array
      */
     public function getWords()
@@ -111,6 +117,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @param float $paragraphMean
      */
     public function setParagraphMean($paragraphMean)
@@ -119,6 +127,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @return float
      */
     public function getParagraphMean()
@@ -127,6 +137,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @param float $paragraphStDev
      */
     public function setParagraphStDev($paragraphStDev)
@@ -135,6 +147,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @return float
      */
     public function getParagraphStDev()
@@ -143,6 +157,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @param float $sentenceMean
      */
     public function setSentenceMean($sentenceMean)
@@ -151,6 +167,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @return float
      */
     public function getSentenceMean()
@@ -159,6 +177,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @param float $sentenceStDev
      */
     public function setSentenceStDev($sentenceStDev)
@@ -167,6 +187,8 @@ class Generator
     }
 
     /**
+     * @codeCoverageIgnore
+     *
      * @return float
      */
     public function getSentenceStDev()
@@ -208,7 +230,7 @@ class Generator
         $sentences = array();
 
         for ($i = 0; $i < $count; $i++) {
-            $wordCount = Statistics::gauss_ms($this->sentenceMean, $this->sentenceStDev);
+            $wordCount = (int) Statistics::gauss_ms($this->sentenceMean, $this->sentenceStDev);
             $sentence = $this->getRandomWords($wordCount);
             $sentences[] = $this->toSentence($sentence);
         }
@@ -273,10 +295,10 @@ class Generator
      * @param int $len
      * @return int
      */
-    public function numberOfCommas($len)
+    protected function numberOfCommas($len)
     {
-        $avg = (float) log($len, 6);
-        $stdDev = (float) $avg / 6.000;
+        $avg = log($len, 6);
+        $stdDev = $avg / 6.000;
 
         return (int) round(Statistics::gauss_ms($avg, $stdDev));
     }
