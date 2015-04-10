@@ -23,8 +23,8 @@ class Issue_01_Test extends \PHPUnit_Framework_TestCase
         srand(1428581280);
         $gen = new Generator;
         for ($i = 0; $i < 1000; $i++) {
-            $para = $gen->getParagraphs(1)[0];
-            $this->assertTrue($para !== '', "Failed on iteration #$i");
+            $para = $gen->getParagraphs(1);
+            $this->assertTrue($para[0] !== '', "Failed on iteration #$i");
         }
     }
 
@@ -32,8 +32,8 @@ class Issue_01_Test extends \PHPUnit_Framework_TestCase
     {
         $gen = new Generator;
         for ($i = 0; $i < 1000; $i++) {
-            $para = $gen->getParagraphs(1)[0];
-            $this->assertTrue($para !== '', "Failed on iteration #$i");
+            $para = $gen->getParagraphs(1);
+            $this->assertTrue($para[0] !== '', "Failed on iteration #$i");
         }
     }
 }

@@ -11,8 +11,14 @@
          bootstrap="vendor/autoload.php"
         >
     <testsuites>
-        <testsuite name="Badcow Lorem Ipsum Test Suite">
+        <testsuite name="Primary">
             <directory>./lib/Tests</directory>
+            <exclude>
+                <directory>./lib/Tests/Github</directory>
+            </exclude>
+        </testsuite>
+        <testsuite name="Issues">
+            <directory>./lib/Tests/Github</directory>
         </testsuite>
     </testsuites>
     <filter>

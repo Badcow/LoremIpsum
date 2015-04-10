@@ -250,6 +250,7 @@ class Generator
 
         for ($i = 0; $i < $count; $i++) {
             $number = Statistics::gauss_ms($this->paragraphMean, $this->paragraphStDev);
+            $number = ($number < 1) ? 1 : $number;
             $sentences = $this->getSentences($number);
             $paragraphs[] = implode(' ', $sentences);
         }
